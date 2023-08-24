@@ -1,0 +1,44 @@
+body
+{
+    margin:0px;
+}
+#header
+{
+    background:#9e9e9e;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5%;
+}
+#gamename
+{
+    position:absolute;
+}
+#mainfield
+{
+    background:#d9d9d9;
+    position: fixed;
+    top: 5%;
+    left: 0;
+    width: 90%;
+    height: 85%;
+}
+#rightsidebar
+{
+    background:#B1C3FF;
+    position: fixed;
+    top: 5%;
+    left: 90%;
+    width: 10%;
+    height: 95%;
+}
+#footer
+{
+    background:#737373;
+    position: fixed;
+    top: 90%;
+    left: 0;
+    width: 90%;
+    height: 10%;
+}
