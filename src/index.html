@@ -1,38 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Interface</title>
+    <title>VTT</title>
     <link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
-    <div id="header">
-        <div class = "gamename">FIRST APP</div>
-    </div>
-    <div id="mainfield">
-        <div id = "desk">
+    <header>
+        <h2>FIRST APP</h2>
+    </header>
+    
+    <mainfield>
+        <div class = "deskmap">
+        </div>
+    </mainfield>
 
+    <rightsidebar>
+        <div class = "mapsettings">
+            <button class = "createmap">CREATE MAP</button>
+            <div class="group1">
+                <table class="table">
+                    <tr>
+                        <td>WIDTH: </td>
+                        <td><input type="text" id="mapX" placeholder="0 ptx"></td>
+                    </tr>
+                    <tr>
+                        <td>HEIGH: </td>
+                        <td><input type="text" id="mapY" placeholder="0 ptx"></td>
+                    </tr>
+                </table>  
+            </div>  
         </div>
-    </div>
-    <div id="rightsidebar">
-        <div id = "mapsettings">
-            <button id = "createmap">CREATE MAP</button>
-            <form>
-                <label for="X">Ширина в пикселях:</label>
-                <input type="text" id="X" placeholder="0 ptx">
-            </form>
-            <form>
-                <label for="Y">Высота в пикселях:</label>
-                <input type="text" id="Y" placeholder="0 ptx">
-            </form>
-        </div>
-        <div id = "tokens"> 
-            <button id = "createtoken">CREATE TOKEN</button>
-            <ol> LIST OF TOKENS
-            </ol>
-        </div>
-    </div>
-    <div id ="footer">
+        <div class = "tokens"> 
+            <button class = "createtoken">CREATE TOKEN</button>
+            <div class="table2">
+                <h2>LIST OF TOKENS</h2>
+                <ul style="list-style-type:disc;" class="tokenlist">
 
-    </div>
+                </ul>
+            </div>
+        </div>
+    </rightsidebar>
+
+    <footer>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
