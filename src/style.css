@@ -10,7 +10,11 @@ header
     left: 0;
     width: 100%;
     height: 5%;
-    text-align: center;  
+    
+    .appname
+    {
+        text-align: center;  
+    }
 }
 mainfield
 {
@@ -24,26 +28,30 @@ mainfield
 
     .deskmap 
     {
-        width: 70vh; /* Задаем ширину поля в 70% высоты окна */
-        height: 70vh; 
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        width: 75vh; /* Задаем ширину поля в 75% высоты окна */
+        height: 75vh; 
     }
     
     .deskmap table {
         border-collapse: collapse; /* Убирает отступы между ячейками */
         width: 100%; /* Чтобы таблица занимала всю ширину контейнера */
         height: 100%; /* Чтобы таблица занимала всю высоту контейнера */
-        margin: auto;
+        margin-top: 0; 
+        margin-bottom: auto;
+
     }
     
     .deskmap td {
         border: 1px solid rgb(0, 7, 0); /* Четкие границы для каждой ячейки */
         padding: 0; /* Убираем внутренний отступ внутри ячейки */
         background-color: #7cec7c; /* Зеленый фон для каждой ячейки */
-        width: 10%; /* Устанавливаем одинаковую ширину и высоту (квадрат) */
-        height: 10%;
+        width: 1%; /* Устанавливаем одинаковую ширину и высоту (квадрат) */
+        height: 1%;
     }
 }
 rightsidebar

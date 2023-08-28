@@ -35,7 +35,6 @@ function createMap()
             map.appendChild(row);
         }
         mapContainer.appendChild(map);
-        alert('=)');
     } else 
     {
         alert('Please enter valid width and height.');
