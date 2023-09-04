@@ -10,7 +10,8 @@
     </header>
     
     <mainfield>
-        <div class = "deskmap">
+        <div class="map-container">
+            <div class = "deskmap"></div>
         </div>
     </mainfield>
 
@@ -21,11 +22,11 @@
                 <table class="table">
                     <tr>
                         <td>WIDTH: </td>
-                        <td><input type="text" id="mapX" placeholder="0 ptx"></td>
+                        <td><input type="text" id="mapX" placeholder="0 cells"></td>
                     </tr>
                     <tr>
                         <td>HEIGH: </td>
-                        <td><input type="text" id="mapY" placeholder="0 ptx"></td>
+                        <td><input type="text" id="mapY" placeholder="0 cells"></td>
                     </tr>
                 </table>  
             </div>  
@@ -42,6 +43,10 @@
     </rightsidebar>
 
     <footer>
+        <div class="map-controls">
+            <button class="zoom-in">+</button>
+            <button class="zoom-out">-</button>
+        </div>
     </footer>
 
     <script src="script.js"></script>

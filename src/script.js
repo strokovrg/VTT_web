@@ -1,17 +1,35 @@
 const createMapButton = document.querySelector('.createmap');
 const createTokenButton = document.querySelector('.createtoken');
 const tokenList = document.querySelector('.tokenlist');
-const mapContainer = document.querySelector('.deskmap');
-
+const deskmap = document.querySelector('.deskmap');
+const mapContainer = document.querySelector(".map-container");
 
 const widthInput = document.getElementById('mapX')
 const heightInput = document.getElementById('mapY');
 
-// Обработчик клика на кнопку "Создать карту"
-createMapButton.addEventListener('click', createMap);
+const zoomInButton = document.querySelector(".zoom-in");
+const zoomOutButton = document.querySelector(".zoom-out");
 
-// Обработчик клика на кнопку "Создать токен"
+// Обработка нажатий
+createMapButton.addEventListener('click', createMap);
 createTokenButton.addEventListener('click', createToken);
+zoomOutButton.addEventListener("click", ZoomIN);
+zoomInButton.addEventListener("click", ZoomOut);
+
+// Функции изменения масштаба карты
+let scale = 1; // Начальный масштаб
+function ZoomIN()
+{
+    if (scale > 0.1) {
+        scale -= 0.1;
+        deskmap.style.transform = `scale(${scale})`;
+    }
+}
+function ZoomOut()
+{
+    scale += 0.1;
+    deskmap.style.transform = `scale(${scale})`;
+}
 
 // Функция для создания карты
 function createMap() 
@@ -22,19 +40,17 @@ function createMap()
     if (!isNaN(width) && !isNaN(height) && width > 0 && height > 0) 
     {
         // Очищаем контейнер карты
-        mapContainer.innerHTML = '';
+        deskmap.innerHTML = '';
 
-        // Создаем игровую карту с заданными размерами
-        const map = document.createElement('table');
-        for (let i = 0; i < height; i++) {
-            const row = document.createElement('tr');
-            for (let j = 0; j < width; j++) {
-                const cell = document.createElement('td');
-                row.appendChild(cell);
-            }
-            map.appendChild(row);
+        deskmap.style.gridTemplateColumns = `repeat(${width}, 50px)`;
+        deskmap.style.gridTemplateRows = `repeat(${height}, 50px)`;
+    
+        for (let i = 0; i < width * height; i++) {
+            const cell = document.createElement("div");
+            cell.className = "cell";
+            cell.textContent = i;
+            deskmap.appendChild(cell);
         }
-        mapContainer.appendChild(map);
     } else 
     {
         alert('Please enter valid width and height.');
