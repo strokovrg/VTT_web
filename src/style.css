@@ -136,8 +136,8 @@ rightsidebar
             /* Стили для фишки токена */
             .token-badge 
             {
-                width: 20px;
-                height: 20px;
+                width: 30px;
+                height: 30px;
                 background-color: #ff5733; /* Цвет фишки */
                 border-radius: 50%;
                 margin-left: 10px;
