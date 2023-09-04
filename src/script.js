@@ -1,5 +1,3 @@
-const createMapButton = document.querySelector('.createmap');
-const createTokenButton = document.querySelector('.createtoken');
 const tokenList = document.querySelector('.tokenlist');
 const deskmap = document.querySelector('.deskmap');
 const mapContainer = document.querySelector(".map-container");
@@ -7,6 +5,9 @@ const mapContainer = document.querySelector(".map-container");
 const widthInput = document.getElementById('mapX')
 const heightInput = document.getElementById('mapY');
 
+// Получение id кнопок
+const createMapButton = document.querySelector('.createmap');
+const createTokenButton = document.querySelector('.createtoken');
 const zoomInButton = document.querySelector(".zoom-in");
 const zoomOutButton = document.querySelector(".zoom-out");
 
@@ -48,7 +49,6 @@ function createMap()
         for (let i = 0; i < width * height; i++) {
             const cell = document.createElement("div");
             cell.className = "cell";
-            cell.textContent = i;
             deskmap.appendChild(cell);
         }
     } else 
@@ -59,13 +59,22 @@ function createMap()
 }
 
 // Функция для создания токена
+let tokenCounter = 1;
 function createToken() 
 {
-    const newTokenItem = document.createElement('li');
-    newTokenItem.textContent = 'New Token'; 
-    tokenList.appendChild(newTokenItem);
+    const token = document.createElement("li");
+    token.textContent = `Token ${tokenCounter}`;
+    token.draggable = true;
+    token.classList.add("token");
+
+    const tokenBadge = document.createElement("div");
+    tokenBadge.classList.add("token-badge");
+    tokenBadge.textContent = tokenCounter; // Добавляем номер на фишку
+
+    token.appendChild(tokenBadge);
+    tokenList.appendChild(token);
+
+    tokenCounter++;
 }
-
-
 
 
