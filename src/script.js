@@ -10,12 +10,14 @@ const createMapButton = document.querySelector('.createmap');
 const createTokenButton = document.querySelector('.createtoken');
 const zoomInButton = document.querySelector(".zoom-in");
 const zoomOutButton = document.querySelector(".zoom-out");
+const startGameButton = document.querySelector(".startGame");
 
 // Обработка нажатий
 createMapButton.addEventListener('click', createMap);
 createTokenButton.addEventListener('click', createToken);
 zoomOutButton.addEventListener("click", ZoomIN);
 zoomInButton.addEventListener("click", ZoomOut);
+startGameButton.addEventListener("click", startGame);
 
 // Функции изменения масштаба карты
 let scale = 1; // Начальный масштаб
@@ -63,22 +65,20 @@ let tokenCounter = 1;
 function createToken() 
 {
     const token = document.createElement("div");
-    token.textContent = `Token ${tokenCounter}`;
     token.classList.add("token");
+    token.id = `token ${tokenCounter}`;
+    token.draggable = true;
+    token.textContent = tokenCounter; // Добавляем номер на фишку
 
-    const tokenBadge = document.createElement("div");
-    tokenBadge.classList.add("token-badge");
-    tokenBadge.id = `token-badge ${tokenCounter}`;
-    tokenBadge.draggable = true;
-    tokenBadge.textContent = tokenCounter; // Добавляем номер на фишку
-
-    token.appendChild(tokenBadge);
     tokenList.appendChild(token);
-
     tokenCounter++;
+}
 
 
-    const tokens = document.querySelectorAll('.token-badge');
+// Функция начала игры
+function startGame()
+{
+    const tokens = document.querySelectorAll('.token');
     const cells = document.querySelectorAll('.cell');
 
     let isDragging = false;
@@ -115,11 +115,5 @@ function createToken()
             }
         });
     });
-}
-
-
-//DnD
-{
-
 }
 

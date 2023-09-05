@@ -14,7 +14,8 @@ header
     
     .appname
     {
-        text-align: center;  
+        text-align: center;
+        margin-top: 10px;
     }
 }
 
@@ -115,37 +116,9 @@ rightsidebar
             justify-content: center;
             overflow: auto;
 
-
             .tokenlist 
             {
                 padding: 0;
-            }
-            
-            .token 
-            {
-                display: flex;
-                align-items: center;
-                margin: 5px 0;
-                padding: 10px;
-                background-color: #f3f3f3;
-                border: 1px solid #ccc;
-                border-radius: 5px;
-                cursor: grab;
-            }
-            
-            /* Стили для фишки токена */
-            .token-badge 
-            {
-                width: 30px;
-                height: 30px;
-                background-color: #ff5733; /* Цвет фишки */
-                border-radius: 50%;
-                margin-left: 10px;
-                display: flex;
-                align-items: center;
-                justify-content: center;
-                color: #fff; /* Цвет текста на фишке */
-                font-weight: bold; /* Жирный текст на фишке */
             }
         }
         
@@ -161,7 +134,8 @@ footer
     width: 80%;
     height: 10%;
 
-    .map-controls {
+    .map-controls 
+    {
         position: absolute;
         top: 10px;
         right: 10px;
@@ -180,11 +154,45 @@ footer
     }
     
     .zoom-in:hover,
-    .zoom-out:hover {
+    .zoom-out:hover 
+    {
         background-color: #A0522D; /* Цвет кнопок при наведении, можно изменить */
+    }
+
+    .startGame
+    {
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        color: #fff;
+        background-color: #8B4513;
+        font-size: 40px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+
+    .startGame:hover
+    {
+        background-color: #A0522D;
     }
 }
 
-
+.token 
+    {
+        width: 30px;
+        height: 30px;
+        padding: 10px;
+        background-color: #ff5733; /* Цвет фишки */
+        border-radius: 50%;
+        margin-left: 10px;
+        margin: 5px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #fff; /* Цвет текста на фишке */
+        font-weight: bold; /* Жирный текст на фишке */
+        cursor: grab;
+    }
 
 
