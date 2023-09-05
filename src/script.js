@@ -18,6 +18,7 @@ createTokenButton.addEventListener('click', createToken);
 zoomOutButton.addEventListener("click", ZoomIN);
 zoomInButton.addEventListener("click", ZoomOut);
 startGameButton.addEventListener("click", startGame);
+$(".startGame").click(function(){$(".startText").toggle('show').delay(3000).slideUp(300);}) //появление текста о начале игры
 
 // Функции изменения масштаба карты
 let scale = 1; // Начальный масштаб
@@ -115,5 +116,9 @@ function startGame()
             }
         });
     });
+    
 }
+
+
+
 

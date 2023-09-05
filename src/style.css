@@ -133,6 +133,7 @@ footer
     left: 0;
     width: 80%;
     height: 10%;
+    
 
     .map-controls 
     {
@@ -159,23 +160,47 @@ footer
         background-color: #A0522D; /* Цвет кнопок при наведении, можно изменить */
     }
 
-    .startGame
+    .start 
     {
-        position: absolute;
-        top: 20%;
-        left: 50%;
-        color: #fff;
-        background-color: #8B4513;
-        font-size: 40px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-    }
+        display: flex;
+        justify-content: center;
 
-    .startGame:hover
-    {
-        background-color: #A0522D;
+        .startGame
+        {
+            top: 10px;
+            position: absolute;
+            color: #fff;
+            background-color: #8B4513;
+            font-size: 40px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .startGame:hover
+        {
+            background-color: #A0522D;
+        }
+
+        .startText 
+        {
+            top: 60px;
+            position: absolute;
+            color: #ee3434;
+            background-color: #ffffff;
+            font-size: 20px;
+            border: none;
+            border-radius: 5px;
+
+            display: none;
+        }
+        
+        .show 
+        {
+            display: block;
+        }
     }
+    
 }
 
 .token 
